@@ -8,7 +8,7 @@ class MF2dfn {
                 if($hasRun) return true;
 
                 if(!preg_match('/p-summary/', $text)) {
-                        if(preg_match('/.*<dfn>.+<\/dfn>.+?[.:](?:\s|$)/', $text, $match)) {
+                        if(preg_match('/.*<dfn>.+<\/dfn>.+?[\.:!\?](?=\s|$)/', $text, $match)) {
                                 $text = str_replace($match[0], '<span class="p-summary">'.$match[0].'</span>', $text);
                                 $hasRun =  true;
                         }
