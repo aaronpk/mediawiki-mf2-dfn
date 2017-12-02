@@ -34,6 +34,12 @@ T14: '''<dfn>post</dfn>''' can refer to either: <ul><li> A discreet piece of con
 </li></ul>
 </li></ul>
 
+T15: {{stub}}
+
+'''<dfn>Loqi</dfn>''' is a friendly and useful bot present in the #indiewebcamp [[IRC]] channel and other channels.
+
+== Commands and Queries ==
+
 <?php
 $text = ob_get_clean();
 
