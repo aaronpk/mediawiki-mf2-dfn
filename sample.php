@@ -43,12 +43,12 @@ T15: {{stub}}
 <?php
 $text = ob_get_clean();
 
-if ( preg_match_all('/.*<dfn>.+<\/dfn>.+?[\.:!\?](?=\s|$)/', $text, $matches) )
+if ( preg_match_all('/(.*)<dfn>(.+)<\/dfn>(.+?[\.!\?])(?=\s|$)/', $text, $matches, PREG_SET_ORDER) )
 {
 
-	foreach ( $matches[0] as $match )
+	foreach ( $matches as $match )
 	{
-		$text = str_replace($match, '<span class="p-summary">'.$match.'</span>', $text);
+		$text = str_replace($match[0], '<span class="p-summary">'.$match[1].'<dfn class="u-iww-thing-defined h-iww-dfn">'.$match[2].'</dfn>'.$match[3].'</span>', $text);
 	}
 
 }
