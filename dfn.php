@@ -9,7 +9,7 @@ class MF2dfn {
 
                 if(!preg_match('/p-summary/', $text)) {
                         if(preg_match('/.*<dfn>.+<\/dfn>.+?[\.!\?](?=\s|$)/', $text, $match)) {
-                                $text = str_replace($match[0], '<span class="p-summary">'.$match[0].'</span>', $text);
+                                $text = str_replace($match[0], '<span class="p-summary">'.$match[1].'<dfn class="u-iww-thing-defined h-iww-dfn">'.$match[2].'</dfn>'.$match[3].'</span>', $text);
                                 $hasRun =  true;
                         }
                 }
